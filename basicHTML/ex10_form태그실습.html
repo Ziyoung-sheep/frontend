@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>form태그실습</title>
+</head>
+
+<body>
+  <h1>이메일 작성</h1>
+  <form>
+    <!-- label+input:text -->
+    <label for="name"> 이름: </label><input type="text" name="" id=""><br>
+    <!-- <label for="name"> 이름: </label><input type="text" name="" id="" value="이름" readonly><br> -->
+    <!-- readonly를 할거면 반드시 value값을 줘야한다 -->
+    <label for="email"> 이메일: </label><input type="email" name="" id="" required><br>
+
+    <!-- 이름: <input type="name" required><br>
+    이메일: <input type="email" required><br> -->
+    내용: <br>
+    <textarea name="content" id="content" cols="30" rows="5"></textarea><br>
+    <!-- cols랑 rows를 앞에 넣으니까 소용이 없었는데... -->
+    <input type="submit" value="Send">
+    <input type="reset" value="Reset">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form action=# method="get">
+    <fieldset>
+      <legend>기본 정보</legend>
+      <p><label for="userid">아이디</label><input type="text" id="userid"></p>
+      <p><label for="passwd">비밀번호</label><input type="password" id="passwd"></p>
+    </fieldset>
+    <fieldset>
+      <legend>선택 정보</legend>
+      <p><label for="age">나이</label><input type="number" id="age"></p>
+      <p><label for="recommender">추천인</label><input type="text" id="" recommender"></p>
+    </fieldset>
+    <!-- <input type="submit" value="눌러보세요" /> -->
+    <!-- 본래 위와 같은 형태이나 form 안에서 버튼을 생성할 때는 아래처럼 해도 submit 이벤트를 실행한다 -->
+    <!-- 즉 위의 코드와 동일하다. -->
+    <button> 전송 </button>
+  </form>
+  <!-- 기본 템플릿 -->
+
+  <!-- form 밖의 버튼은 그냥 버튼 -->
+  <button type="종류"> 버튼 내용 </button>
+  <!-- 알림창이 뜨는 버튼 -->
+  <button onclick="alert('안녕하세요')"> 눌러보세요! </button>
+
+  <hr>
+  <form>
+    <h3>사이즈(단일선택)</h3>
+    <p>
+      <input type="radio" name="check1" value="L">
+      <input type="radio" name="check1" value="M">
+      <input type="radio" name="check1" value="S">
+    </p>
+    <form>
+      <h3>색상(다중선택)</h3>
+      <p>
+        <input type="radio" name="check2" value="red">
+        <input type="radio" name="check3" value="green">
+        <input type="radio" name="check4" value="blue">
+      </p>
+    </form>
+
+    <!-- selective인가 뭔가 선택 초기값 -->
+    <!-- 화면에 보이지 않게 서버에 값을 넘겨주고 싶으 면 hibben -->
+    <!-- readonly 읽기전용 서버에 데이터 전송 disable 읽기전용 서버에 데이터 전송 X -->
+    <!-- 관련내용 HTML 폼실습에 있다 -->
+
+    <textarea name="content" id="content"></textarea>
+
+
+</body>
+
+</html>

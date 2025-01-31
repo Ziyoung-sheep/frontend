@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0px;
+      /* 마진을 하나만 쓰면 상하좌우 다 적용 */
+      border: 1px solid black;
+
+    }
+
+    /* *을 하면 전체 선택자 */
+    h1 {
+      color: blue;
+    }
+
+    .type1 {
+      background-color: lightblue;
+      margin: 5px 10px;
+      /* 상하 5픽셀 좌우 10픽셀 */
+    }
+
+    #type2 {
+      background-color: pink;
+      padding: 5px 10px;
+    }
+
+    p.a {
+      background-color: lightcoral;
+      /* 색상명 */
+    }
+
+    p.b {
+      background-color: rgb(107, 107, 26, 0.5);
+      /* 색상 앞의 네모를 선택해 스포이드로 선택이 가능 마지막 값은 투명도*/
+    }
+
+    p.c {
+      background-color: #6464dd;
+      /* 색상코드 */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- h1.type1 -->
+  <h1 class="type1"> class가 type1 h1 </h1>
+  <!-- h2.type2 -->
+  <h1 id="type2"> ID가 type2 h1</h1>
+  <p class="type1">class가 type1 p</p>
+  <p class="type1">class가 type1 p</p>
+  <h1 style="color: pink;">h1태그</h1>
+  <p class="a"> color1 </p>
+  <p class="b"> color2 </p>
+  <p class="c"> color3 </p>
+  <p class="d"> color4 </p>
+</body>
+
+</html>
