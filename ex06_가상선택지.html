@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>가상선택자</title>
+  <style>
+    p::before {
+      content: "<before>";
+      color: blue;
+      width: 10px;
+      height: 10px;
+      margin-left: 10px;
+      /* 마진은 외부값 */
+      padding: 5px;
+      /* 컨텐츠 사이즈 자체에 영향을 준다 */
+      background-color: lightgray;
+    }
+
+    p {
+      margin: 5px 5px 5px 5px;
+      /* 시계방향 위 오른쪽 아래 왼쪽 */
+      color: red;
+      font-weight: 600;
+    }
+
+    p::after {
+      content: "<after>";
+    }
+
+    h1#test1 {
+      color: blueviolet;
+    }
+
+    h1#test1:hover {
+      /* 사용자의 인풋에 의해 바뀔 수도 있다: hover 마우스 올릴때  */
+      color: green;
+    }
+
+    h1#test1:active {
+      /* 클릭할때  */
+      color: blue;
+    }
+
+    input[type="text"]:focus {
+      /* 텍스트 박스 안에 커서 올리면 색깔 바꾸기 */
+      background-color: lightcoral;
+    }
+
+    p {
+      color: brown !important;
+      /* 최상위 우선순위 */
+    }
+  </style>
+</head>
+
+<body>
+  <p style="color: pink;">Lorem ipsum</p>
+  <h1 id="test1">test1</h1>
+  <input type="text" />
+</body>
+
+</html>

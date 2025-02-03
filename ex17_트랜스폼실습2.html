@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 30px 0;
+    }
+
+    .box {
+      margin-top: 20px;
+      width: 600px;
+      height: 120px;
+      border: 1px solid black;
+      background-image: linear-gradient(red, orange);
+      /* display: flex; */
+      display: inline-block;
+      /* align-items: center; */
+      /* justify-content: center; */
+      line-height: 120px;
+    }
+
+    /* 선생님꺼 따라했더니 안됨ㅋㅋ흐아앙 나중에 다시 뜯어봐야지 */
+
+    span {
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      margin: 5px;
+      transition-duration: 0.5s;
+    }
+
+    /* .box:hover>span {
+      transform: translateY(-20px);
+    } */
+
+    .box:hover span {
+      transform: translateY(-20px);
+    }
+
+    .box :nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .box :nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .box :nth-child(4) {
+      transition-delay: 0.3s;
+    }
+
+    .box :nth-child(5) {
+      transition-delay: 0.4s;
+    }
+
+    .box :nth-child(6) {
+      transition-delay: 0.5s;
+    }
+
+    .box :nth-child(7) {
+      transition-delay: 0.6s;
+    }
+
+    .box :nth-child(8) {
+      transition-delay: 0.7s;
+    }
+
+    .box :nth-child(9) {
+      transition-delay: 0.8s;
+    }
+  </style>
+</head>
+
+<body>
+  <header>박스 위에 마우스를 올려보세요!</header>
+  <div class="box">
+    <span>T</span>
+    <span>R</span>
+    <span>A</span>
+    <span>N</span>
+    <span>S</span>
+    <span>F</span>
+    <span>O</span>
+    <span>R</span>
+    <span>M</span>
+  </div>
+</body>
+
+</html>

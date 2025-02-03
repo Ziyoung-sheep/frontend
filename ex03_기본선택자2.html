@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본선택자2</title>
+  <!-- 헤드에서 눈에 보이는 태그는 타이틀뿐, 나머지는 문서의 정보 -->
+  <style>
+    h1,
+    h2 {
+      color: red;
+      /* h1 태그에 red 색상을 적용시켜라 */
+    }
+
+    /* 콤마를 쓰면 여러개를 동시 적용할 수 있다. *을 쓰면 전체 */
+    /* body를 쓰면 body만 */
+    body {
+      border: 1px solid black;
+    }
+
+    h1+h3 {
+      /* 적용안됨 플러스는 근처에 있는 형제 하나만 적용 */
+      color: aqua;
+    }
+
+    h1~h3 {
+      /* 같은 형제라면 다 포함, 동일 선상의 형제가 아니라면 적용되지 않는다 */
+      color: aqua;
+      /* 부모에게 적용시키면 내부에는 상속됨 */
+      /* div h3{} 이런 식으로 하면 내부의 후손 전부 상속.*/
+      /* div>h3{} 꺽쇠를 쓰면  직계 자손만 선택이 되고 후손(자손 밑의 자손)은 선택되지 않는다.*/
+    }
+  </style>
+</head>
+
+<body>
+  <!-- h1+h2+h3 : 형제태그(동등한 위치) 자동생성 -->
+  <h1>test1</h1>
+  <h2>test2</h2>
+  <h3>test3</h3>
+</body>
+
+</html>

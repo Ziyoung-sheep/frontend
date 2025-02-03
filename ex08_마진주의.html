@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>마진주의사항</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      border: 2px solid red;
+      background-color: yellow;
+      padding: 10px;
+    }
+
+    #first {
+      margin-bottom: 10px;
+    }
+
+    #second {
+      margin-top: 30px;
+    }
+
+    /* 마진이 맞물리면 더 높은 쪽 마진으로 포함된다 즉 위와 같은 경우 30이 된다 */
+
+    div {
+      width: 100px;
+      height: 100px;
+      background-color: lightgreen;
+      margin: 5px;
+      text-align: center;
+
+    }
+
+    #third {
+      /* width+height 우리가 선택한 값으로 고정
+      :패딩에 영향을 끼치지 않음*/
+      box-sizing: border-box;
+      width: 400px;
+      padding: 5px;
+    }
+
+    #forth {
+      /* width+height 패딩영역포함계산 */
+      box-sizing: content-box;
+      width: 400px;
+      padding: 10px;
+    }
+
+    h1 {
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 30px;
+    }
+
+    span {
+      border: 2px dashed navy;
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: block;
+    }
+
+    /* 패딩 마진 이런 녀석들은 상속이 되지 않는다 */
+  </style>
+</head>
+
+<body>
+  <p id="first">test1</p>
+  <p id="second">test2</p>
+  <div id="third">
+    솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸
+  </div>
+  <div id="forth">
+    솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸솰롸
+  </div>
+
+  <span>test1</span>
+  <span>test2</span>
+</body>
+
+</html>

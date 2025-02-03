@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수</title>
+  <style>
+    .outer {
+      border: 1px solid red;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    .item1,
+    .item2,
+    .item3,
+    .item4 {
+      height: 50px;
+    }
+
+    .item1 {
+      background-color: red;
+      width: calc(50px + 50px);
+      /* calc: 자동계산 함수 숫자와 기호 사이에 반드시 띄어쓰기를 해야함 */
+    }
+
+    .item2 {
+      background-color: blue;
+      width: calc(100% - 120px);
+    }
+
+    .item3 {
+      background-color: green;
+      width: calc(2 * 100px);
+    }
+
+    .item4 {
+      background-color: orange;
+      width: calc(100% / 4);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <p>50px+50px</p>
+    <div class="item1"></div>
+  </div>
+  <div class="outer">
+    <p>100%+120px</p>
+    <div class="item2"></div>
+  </div>
+  <div class="outer">
+    <p>2*100px</p>
+    <div class="item3"></div>
+  </div>
+  <div class="outer">
+    <p>100%/4</p>
+    <div class="item4"></div>
+  </div>
+
+</body>
+
+</html>

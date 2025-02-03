@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>트랜지션실습3</title>
+  <style>
+    .container {
+      width: 500px;
+      padding: 20px;
+      border: 2px solid black;
+    }
+
+    .container div {
+      width: 10px;
+      height: 50px;
+      background-color: palevioletred;
+      margin-bottom: 10px;
+      transition-duration: 1s;
+    }
+
+    .container:hover>div {
+      /* 이 젠장 >이거 하나를 못알ㄹ아채서어어어어 */
+      width: 100%;
+      transition-duration: 1s;
+    }
+
+    .container :nth-child(5) {
+      transition-delay: 0.8s;
+    }
+
+    .container :nth-child(4) {
+      transition-delay: 0.6s;
+    }
+
+    .container :nth-child(3) {
+      transition-delay: 0.4s;
+    }
+
+    .container :nth-child(2) {
+      transition-delay: 0.2s;
+    }
+
+    .container :nth-child(1) {
+      transition-delay: 0s;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="long">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+
+</html>

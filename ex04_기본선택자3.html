@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본선택자3</title>
+  <style>
+    /* p:first-child { */
+    /* p:nth-child(1) { */
+    /* 위와 같음 안의 숫자가 바뀌면 첫번째 두번째 세번째 인 애들 */
+    /* width: 100px;
+      height: 100px;
+      background-color: lightblue;
+    } */
+    /* id를 명시할거면 #붙여주기 */
+    /* #test>p:nth-child(1) { */
+    /* 위와 같음 안의 숫자가 바뀌면 첫번째 두번째 세번째 인 애들 */
+    #test>p:last-child(1) {
+      /* last하면 뒤에서부터 센다 */
+      width: 100px;
+      height: 100px;
+      background-color: lightblue;
+    }
+
+    /* p:nth-of-type() */
+    /* p타입중에 두번째 */
+  </style>
+</head>
+
+<body>
+  <!-- p+(div>p*2)+(div>p*2) -->
+  <p>test1</p>
+  <div>
+    <p>test2</p>
+    <span>span1</span>
+    <p>test3</p>
+  </div>
+  <div id="test">
+    <p>test4</p>
+    <span>span2</span>
+    <span>span3</span>
+    <p>test5</p>
+  </div>
+</body>
+
+</html>
