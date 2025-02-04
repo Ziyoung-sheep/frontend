@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    section {
+      width: 100%;
+      display: flex;
+      display: flex;
+    }
+
+    p,
+    h2 {
+      margin: 10px;
+    }
+
+    .content1 {
+      width: 100;
+      background-color: yellow;
+      flex: 5;
+    }
+
+    .content2 {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      flex: 5;
+    }
+
+    .sub1 {
+      background-color: skyblue;
+      flex: 1;
+    }
+
+    .sub2 {
+      flex: 1;
+      background-color: palevioletred;
+    }
+
+    @media(max-width:768px) {
+      section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <article class="content1">
+      <h2>content1</h2>
+      <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, illo amet deleniti quod repellendus ullam
+        eum enim commodi numquam similique. Veniam atque non, repellat nobis at recusandae labore voluptas earum?
+        Ut laudantium rem quae vel incidunt voluptatibus soluta tempore necessitatibus, magnam ratione consequuntur,
+        fugit quaerat optio aliquid architecto cum sunt praesentium, numquam tenetur deleniti distinctio ipsam illo
+        sequi. Dolorum, aut.
+        Fugit distinctio doloribus excepturi explicabo ad minus! Eaque deserunt molestias maxime nam quidem aut minima
+        totam aperiam dolores consectetur error, eos maiores pariatur unde asperiores quasi tempora tenetur modi iusto.
+      </p>
+    </article>
+    <article class="content2">
+      <div class="sub1">
+        <h2>sub1</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, aut veritatis exercitationem temporibus
+          alias laboriosam sit voluptatem in maiores mollitia voluptatibus accusamus totam, possimus eos magni ducimus
+          iusto veniam modi!</p>
+      </div>
+      <div class="sub2">
+        <h2>sub2</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, aut veritatis exercitationem temporibus
+          alias laboriosam sit voluptatem in maiores mollitia voluptatibus accusamus totam, possimus eos magni ducimus
+          iusto veniam modi!</p>
+      </div>
+    </article>
+  </section>
+</body>
+
+</html>
