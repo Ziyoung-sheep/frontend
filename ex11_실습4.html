@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     section {
       width: 100%;
       display: flex;
@@ -40,8 +48,19 @@
       background-color: palevioletred;
     }
 
-    @media(max-width:768px) {
+    @media(min-width:1200px) {
       section {
+        width: 1200px;
+      }
+    }
+
+    @media(max-width:768px) {
+      body {
+        align-items: start;
+      }
+
+      section {
+        width: 100%;
         flex-direction: column;
       }
     }
