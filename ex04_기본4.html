@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>기본4</title>
+  <style>
+    .parent {
+      border: 5px solid green;
+      display: flex;
+    }
+
+    .parent div {
+      height: 200px;
+      width: 200px;
+      font-size: 2em;
+      line-height: 200px;
+      text-align: center;
+      /* #ffffff */
+      color: #fff;
+    }
+
+    .child1 {
+      background-color: crimson;
+      flex: 1;
+    }
+
+    .child2 {
+      background: royalblue;
+      /* flex 안준 값은 고정되어있는 200px 로 멈춤  */
+      /* flex: 2; */
+    }
+
+    .child3 {
+      background-color: yellowgreen;
+      flex: 2;
+    }
+
+    .child4 {
+      background-color: orange;
+      flex: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- div.parent>div.child{$}*4 -->
+  <div class="parent">
+    <div class="child1">1</div>
+    <div class="child2">2</div>
+    <div class="child3">3</div>
+    <div class="child4">4</div>
+  </div>
+</body>
+
+</html>

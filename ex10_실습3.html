@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 80%;
+      font-size: 10px;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    header {
+      height: 10%;
+      background-color: tomato;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    section {
+      box-sizing: border-box;
+      height: 80%;
+      display: flex;
+
+    }
+
+    aside.left {
+      background-color: yellow;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    main {
+      display: flex;
+      background-color: lightblue;
+      flex: 8;
+      align-items: center;
+      justify-content: center;
+    }
+
+    main>p {
+      text-align: start;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    aside.right {
+      background-color: yellowgreen;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    footer {
+      height: 10%;
+      background-color: aqua;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    @media(max-width:768px) {
+      .container {
+        height: 100%;
+      }
+
+      section {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>header</header>
+    <section>
+      <aside class="left">left</aside>
+      <main>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur consequatur, ad iste aperiam reprehenderit
+          natus hic vitae sit odio, commodi doloribus assumenda non consectetur? Perferendis quis laborum fuga enim
+          error.
+        </p>
+      </main>
+      <aside class="right">right</aside>
+    </section>
+    <footer>footer</footer>
+  </div>
+</body>
+
+</html>

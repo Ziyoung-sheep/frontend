@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .flex-item {
+      width: 33.33333%;
+
+      /* flex-basis: 부모의 크기에 맞춰서 자식이 유동적으로 변함 */
+      /* flex-basis: 33.33333%; */
+
+      box-sizing: border-box;
+      padding: 5px;
+      color: white;
+      background: mediumseagreen;
+    }
+
+    .box {
+      /* 보이는 화면의 너비값 50%  */
+      width: 50vw;
+      background: red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="flex-container">
+    <div class="flex-item">Lorem, ipsum.</div>
+    <div class="flex-item">
+      <div class="box">BOX</div>
+    </div>
+    <div class="flex-item">Lorem, ipsum dolor.</div>
+    <div class="flex-item">Lorem, ipsum.</div>
+    <div class="flex-item">B</div>
+    <div class="flex-item">Lorem, ipsum dolor.</div>
+  </div>
+
+</body>
+
+</html>
