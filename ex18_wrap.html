@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wrap 실습</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+    }
+
+    .parent {
+      display: flex;
+      flex-wrap: wrap;
+      width: 500px;
+    }
+
+    .child {
+      background-color: palevioletred;
+      margin: 5px;
+      height: 100px;
+      width: calc(100% / 3 - 5px*2);
+      /* min-width: 150px; */
+      border-radius: 3px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 2em;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+    <div class="child">4</div>
+    <div class="child">5</div>
+    <div class="child">6</div>
+  </div>
+
+</body>
+
+</html>

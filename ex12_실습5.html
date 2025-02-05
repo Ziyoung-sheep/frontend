@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+    }
+
+    section {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+    }
+
+    h2,
+    p {
+      margin: 20px;
+    }
+
+    main {
+      flex: 8;
+      display: flex;
+    }
+
+    header {
+      align-items: center;
+      flex: 1;
+      display: flex;
+      width: 100%;
+      background-color: yellow;
+    }
+
+    .banner {
+      align-items: center;
+      flex: 1;
+      display: flex;
+      width: 100%;
+      background-color: greenyellow;
+    }
+
+    nav {
+      /* flex-basis: 150px; */
+      /* flex-shrink: 0; */
+      width: 150px;
+      /* 이게 훨씬 간단하네?? */
+      background-color: palevioletred;
+    }
+
+    article {
+      flex: 1;
+      background-color: aqua;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <header>
+      <h2>Header</h2>
+    </header>
+    <div class="banner">
+      <h2>Banner</h2>
+    </div>
+    <main>
+      <nav>
+        <h2>Navi</h2>
+      </nav>
+      <article>
+        <h2>Main</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Alias perspiciatis est dolore laboriosam saepe
+          mollitia. Sapiente quisquam iusto cum incidunt ut voluptatem impedit et accusantium, quidem tempore saepe
+          voluptas possimus!
+          Repudiandae cupiditate ea consequatur ratione, in architecto ipsa reiciendis libero quos at facilis quibusdam!
+          Incidunt porro ducimus perferendis itaque dolorem dignissimos nisi. Id, nihil dignissimos amet enim maiores
+          sed officiis.
+          Quaerat tenetur sed, perferendis nesciunt nisi autem error deserunt. Ad excepturi sint aut vel id. Quam minima
+          nesciunt maxime deleniti. Est ut consequuntur facilis, magni dolor perferendis nesciunt unde placeat?</p>
+      </article>
+    </main>
+  </section>
+</body>
+
+</html>
