@@ -4,39 +4,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>회원가입폼</title>
+  <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
-  <container>
-    <section1>
-      <img src="./image/photo-01.png" alt="그림1">
-      <article>
-        <h2>title1</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magnam unde voluptatum dolor, quaerat
-          similique ea itaque culpa quos architecto repellendus, doloribus dolore, maxime repellat beatae. Nulla
-          necessitatibus totam odit.</p>
-      </article>
-    </section1>
-    <section2>
-      <img src="./image/photo-02.png" alt="그림2">
-      <article>
-        <h2>title1</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magnam unde voluptatum dolor, quaerat
-          similique ea itaque culpa quos architecto repellendus, doloribus dolore, maxime repellat beatae. Nulla
-          necessitatibus totam odit.</p>
-      </article>
-    </section2>
-    <section3>
-      <img src="./image/photo-03.png" alt="그림3">
-      <article>
-        <h2>title1</h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi magnam unde voluptatum dolor, quaerat
-          similique ea itaque culpa quos architecto repellendus, doloribus dolore, maxime repellat beatae. Nulla
-          necessitatibus totam odit.</p>
-      </article>
-    </section3>
-  </container>
+  <div class="container">
+    <div class="login-form">
+      <h2>registeration</h2>
+      <div class="sns-login">
+        <button class="btn facebook"><i class="fa fa-facebook"></i>Login in with facebook</button>
+        <button class="btn twitter"><i class="fa fa-twitter"></i>Login in with twitter</button>
+        <button class="btn google"><i class="fa fa-google"></i>Login in with google</button>
+      </div>
+      <!-- div.field>label+input -->
+      <div class="field">
+        <label for="username">username</label>
+        <input type="text" id="username">
+      </div>
+      <div class="field">
+        <label for="email">e-mail</label>
+        <input type="email" id="email">
+      </div>
+      <div class="field">
+        <label for="password">password</label>
+        <input type="password" id="password">
+      </div>
+      <div class="sumbit-btn">
+        <button class="btn-submit">log in</button>
+      </div>
+    </div>
+  </div>
 
 </body>
 

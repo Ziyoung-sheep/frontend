@@ -1,0 +1,124 @@
+/* goole web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+  box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{ margin: 0; font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea{font-family: 'Montserrat', sans-serif;}
+
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
+section{
+  /* width: 950px; */
+  width: 100%;
+  margin: auto;
+}
+
+/* header */
+nav{
+  height: auto;
+  /* border: 1px solid red; */
+  padding: 10px;
+}
+nav .gnb{
+  padding: 30px;
+  text-align: right;
+}
+.gnb a{
+  margin: 15px;
+  position: relative;
+}
+.gnb a:last-child{
+  margin-right: 0;
+}
+/* 가상선택자는 content , position 필요 */
+.gnb a::after{
+  content: '';
+  position:absolute;
+  bottom: -5px;
+  /* left: 0; */
+  left: 50%;
+  height: 3px;
+  width: 100%;
+  width: 0;
+  background-color: #222;
+  opacity: 0.5;
+  transform: translateX(-50%);
+  transition: 0.3s;
+}
+.gnb a:hover::after{
+  width: 100%;
+}
+
+.search-box{
+  display: flex;
+  justify-content: space-between;
+}
+.search-box input{
+
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: 5px;
+  width: 300px;
+  font-size: 18px;
+  /* url 이미지를 반복없이 한개만 가져와서 오른쪽 정렬 */
+  background: url(./images/search.png) no-repeat right;
+  /* css url 이미지값 주면 포토샵 없이 size 줄일 수 있다  */
+  background-size: 22px;
+  
+}
+.search-box input:focus::placeholder{
+  /* opacity: 0; */
+  visibility: hidden;
+}
+.search-box button{
+  background-color: crimson;
+  color: #fff;
+  border-radius: 6px;
+  padding: 13px 60px;
+  font-size: 18px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+/* items */
+.items{
+  border: 1px solid blue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.items .item{
+  margin: 5px;
+  width: calc(100% / 3 - 5px*2);
+  /* width: 310px; */
+  height: 200px;
+  overflow: hidden;
+}
+.item img{
+  width: 100%;
+  /* height: 100%; */
+}
+
+/* 테블릿 환경 */
+@media (min-width:768px) and (max-width: 1024px){
+  .items.item{
+    width: calc(100% / 2 - 5px*2);
+  }
+}
+/* 모바일환경 */
+@media (max-width: 767px){
+  .items.item{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
