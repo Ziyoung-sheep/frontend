@@ -1,0 +1,363 @@
+/* goole web font */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:300,400,500,700,700&display=swap');
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+/* reset CSS */
+*{
+  box-sizing: border-box;
+}
+a{ text-decoration: none; color: #222;}
+h1,h2,h3,h4,h5,h6{ margin: 0; font-weight: normal;}
+button{ cursor: pointer; outline: none; border: none;}
+ul{margin: 0; padding: 0; text-decoration: none; list-style: none;}
+/* body font-fmaily를 상속받지 않는 태그들  */
+button,input,textarea,select{
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+}
+body{
+  margin: 0;
+  height: 100vh;
+  font-family: 'Montserrat' , sans-serif;
+  line-height: 1.5em;
+}
+
+.container{
+  height: 100%;
+}
+/* common css */
+.inner{
+  /* border: 2px solid blue; */
+  width: 1300px;
+  margin: auto;
+}
+/* header */
+/* position 값을 주면 inner block => 다시 width 값을 줘야함 */
+header{
+  position: absolute;
+  width: 100%;
+  top:0;
+  left:0;
+  /* z-index: 1000; */
+}
+
+.banner{
+  background-color: black;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+.lnb{
+  /* border: 2px solid red; */
+  width: 1300px;
+  margin: auto;
+  text-align: right;
+}
+.lnb a{
+  color: #ddd;
+  margin: 5px;
+}
+.lnb a:last-child{
+  margin: 0;
+}
+.lnb em{
+  color: #bbbb;
+}
+nav{}
+nav .inner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo{
+  padding: 10px;
+}
+.gnb{
+  display: flex;
+  /* border: 2px solid red; */
+  align-items: center;
+}
+.gnb li a{
+  color: #fff;
+  margin: 20px;
+}
+.gnb li a:last-child{
+  margin-right: 0;
+}
+.gnb li a:hover{
+  color: red;
+}
+
+/* intro */
+main{
+  border: 2px solid blue;
+  height: 70vh;
+  background: url(images/intro.jpg) no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .inner{
+  
+  /* border: 2px solid red; */
+  color: #fff;
+  text-align: center;
+
+}
+.heading{}
+.heading h1{
+  font-size: 56px;
+  margin-bottom: 30px;
+}
+.heading p{
+  font-size: 22px;
+  line-height: 1.5em;
+  padding: 0 150px;
+  font-weight: 300;
+}
+
+
+/* about */
+.about{}
+.about-content{
+  /* border: 2px solid red; */
+  display: flex;
+  /* 고정 높이 값을 주면 나중에 반응형에서 hight: auto 로 변경 해주는 것이 번거롭기 때문에 간단하게 padding 으로 값주기 */
+  padding: 150px 0 ;
+  text-align: center;
+}
+.about-content > div{
+  padding: 30px;
+}
+.desc{
+  /* border: 2px solid green; */
+  flex: 3;
+  padding: 150px 0;
+}
+.desc h2{
+  /* normal : 400 bold : 600 */
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+.desc p{
+  font-size: 16px;
+  line-height: 1.7em;
+}
+.desc a{
+  color: rgb(243, 107, 58);
+  font-weight: bold;
+}
+.desc a:hover{
+  text-decoration: underline;
+}
+.photo{
+  /* border: 2px solid blue; */
+  flex: 2;
+  padding-top: 150px;
+}
+.photo img{
+  width: 100%;
+  border-radius: 40% 60% 65% 35% / 35% 45% 55% 60% ;
+}
+
+/* ranking */
+/* 연한 배경색 #gf1~ f9 */
+.ranking{
+  /* border: 2px solid blue; */
+  background-color: #f9f9f9;
+}
+.ranking-content{
+  padding: 100px 0; 
+}
+.ranking-content h2{
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.items{
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: space-around;
+}
+.item{
+  /* border: 2px solid green; */
+  width: 390px;
+  height: 620px;
+  border-radius: 30px 0 30px 0;
+  box-shadow: 5px 5px 20px 5px #00000073 ;
+  overflow: hidden;
+}
+
+.up-img{
+  width: 100%;
+  height: 300px;
+}
+/* 가로 짤리면 가로 100% 세로 짤리면 세로 100% */
+.up-img img{
+  height : 100%;
+}
+.down-desc{
+  /* border: 2px solid green; */
+  padding: 25px;
+}
+.down-desc .badge{
+  background-color: pink;
+  padding: 2px 10px;
+  font-size: 16px;
+  color: #fff;
+}
+.badge.must{
+  background-color: crimson;
+}
+.badge.good{
+  background-color: royalblue;
+}
+
+.down-desc h3{
+  margin-top: 5px;
+  font-size: 22px;
+}
+.down-desc p{}
+.btn-explore{
+  color: #c25a3a;
+  font-weight: 500;
+}
+.btn-explore img{
+  transition: 0.5s;
+}
+
+.btn-explore :hover {
+/* transform: translateX(10px); */
+margin-left: 10px;
+}
+
+/* testmonial */
+.testmonial{}
+
+
+
+/* callaction */
+.callaction{
+  height: 450px;
+  background: url(images/callaction-01.jpg) no-repeat center center;
+  background-size: cover;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+
+}
+.callaction::before{
+  content: '';
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right bottom, rgba(78,0,78,0.4), rgba(104, 104,1,0.4));
+}
+.callaciton-heading{
+  color: #fff;
+  text-align: center;
+  z-index: 100;
+}
+.callaciton-heading h2{
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 1.3em;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+.callaciton-heading span{
+  font-weight: 500;
+}
+.callaciton-heading a{
+  color: #fff;
+  background-color: #109e4b;
+  /* width: 100px;
+  height: 300px;
+  display: inline-block; */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+.callaciton-heading a:hover{
+  background-color: orange;
+}
+/* festival */
+.festival{
+  height: 270px;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.festival-heading{
+  text-align: center;
+}
+.festival-heading h3{
+  font-weight: 300;
+  color: #fff;
+  margin-bottom: 30px;
+}
+.festival-heading span{
+  font-weight: 500;
+}
+.btns{}
+.btns a{
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 5px;
+  transition: 0.3s;
+  display: inline-block;
+}
+.btns a:hover{
+  /* font-size: 20px; */
+  transform: translateY(-10px);
+}
+.btns a:first-child{
+  background-color: orange;
+  color: #fff;
+}
+.btns a:last-child{
+  color:#222;
+  background-color: #ededed;
+}
+
+/* footer */
+footer{
+  background-color: #000;
+  padding: 30px;
+}
+.footer-content{
+  /* border: 2px solid red; */
+  display: flex;
+  text-align: center;
+  color: #959595;
+}
+
+.footer-content ul li:first-child{
+  font-weight: 500;
+  color: #d9d9d9;
+}
+.footer-content ul li a{
+  color: #959595;
+}
+.footer-content ul li a:hover{
+  text-decoration: underline;
+}
+
+.community{
+  flex: 1;
+}
+.network{
+  flex: 1;
+}
+.help{
+  flex: 2;
+}

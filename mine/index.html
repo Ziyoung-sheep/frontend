@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>경과 시간 카운터</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, 'Times New Roman', Times, serif, Geneva, Tahoma, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif, Courier, monospace, sans-serif;
+            text-align: center;
+        }
+
+        #counter {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            filter: drop-shadow(0 0 2px black);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="counter">로딩 중...</div>
+
+    <script>
+        // 기준 날짜 설정 (예: 2020년 1월 1일 00:00:00)
+        const startDate = new Date("2020-01-01T00:00:00");
+
+        function updateCounter() {
+            const now = new Date(); // 현재 시간
+            const diff = now - startDate; // 경과된 밀리초
+
+            // 밀리초를 일, 시간, 분, 초로 변환
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            // 화면에 표시
+            document.getElementById("counter").innerText =
+                `${days}Day, ${hours}:${minutes}:${seconds}`;
+        }
+
+        // 1초마다 업데이트
+        setInterval(updateCounter, 1000);
+
+        // 페이지 로드 시 즉시 실행
+        updateCounter();
+    </script>
+</body>
+
+</html>

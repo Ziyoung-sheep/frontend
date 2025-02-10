@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid 예제 02</title>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            height: 100vh;
+            color: white;
+            font-size: 30px;
+            /* font-weight: bold; */
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            height: 100%;
+            gap: 10px;
+            /* row size / column size */
+            grid-template:
+                "header header header header" 50px
+                /* row 사이즈 => 높이값 column 너비값 1fr ==> 50px+100px 제외한 나머지 영역 꽉채운다  */
+                "nav main main main " 1fr
+                "footer footer footer footer" 100px / 1fr 1fr 1fr 1fr;
+        }
+
+        header {
+            grid-area: header;
+            background-color: lightblue;
+        }
+
+        main {
+            grid-area: main;
+            background-color: blanchedalmond;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: lightseagreen;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: lightsalmon;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <header>header</header>
+        <main>main</main>
+        <nav>nav</nav>
+        <footer>footer</footer>
+    </div>
+
+</body>
+
+</html>

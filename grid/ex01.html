@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그리드 실습1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 1px solid;
+        }
+
+        .container {
+            height: 100vh;
+            display: grid;
+            grid-template:
+                "header header header header" 1fr
+                "content content content nav" 4fr
+                "footer footer footer footer" 1fr
+        }
+
+        header {
+            background-color: indianred;
+            grid-area: header;
+        }
+
+        section {
+            background-color: sandybrown;
+            grid-area: content;
+        }
+
+        nav {
+            background-color: seagreen;
+            grid-area: nav;
+        }
+
+        footer {
+            background-color: cornflowerblue;
+            grid-area: footer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>header</header>
+        <section>section</section>
+        <nav>nav</nav>
+        <footer>footer</footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gird 04</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            height: 800px;
+        }
+
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(2, 100px);
+            display: grid;
+            height: 100%;
+            border: 2px solid red;
+            /* align-items: center; */
+            /* justify-items: right; */
+
+            /* content 는 부모에 여백이 있고 자식요소가 여러줄 */
+
+            align-content: space-around;
+            justify-content: space-evenly;
+            gap: 10px 10px
+        }
+
+        .item {
+            width: 100%;
+            background-color: pink;
+            border: 1px solid salmon;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        .grid :nth-child(2n) {
+            background-color: lightblue;
+            border: 1px solid cadetblue;
+        }
+
+        /* 
+    li:nth-child(1) {
+      justify-self: end;
+    }
+
+    li:nth-child(2) {
+      align-self: end;
+    }
+
+    li:nth-child(3) {
+      align-self: center;
+    }
+
+    li:nth-child(4) {
+      align-self: flex-start;
+    } */
+
+        li:nth-child(5) {}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="grid">
+            <li class="item">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+        </ul>
+    </div>
+</body>
+
+</html>
