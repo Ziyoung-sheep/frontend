@@ -1,0 +1,27 @@
+*{
+    box-sizing: border-box;
+  }
+  body{
+    background-color: lightpink;
+  }
+  .myslider{
+    border: 1px solid red;
+    width: 600px;
+    margin: auto;
+    background-color: #fff;
+  }
+  .myslider div{
+    border: 1px solid blue;
+    height: 300px;
+    text-align: center;
+    line-height: 300px;
+  }
+  .slick-dots{
+    visibility: hidden;
+  }
+  .slick-dots li button:before {
+    font-size: 100px;
+  }
+  .slick-arrow{
+    visibility: hidden;
+  }
