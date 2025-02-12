@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex01</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: yellowgreen;
+      text-align: center;
+      line-height: 100px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="box">1</div>
+  <div class="box">2</div>
+  <div class="box">3</div>
+  <div class="box">4</div>
+
+</body>
+
+</html>
+
+<!-- 스크립트는 어디 들어가든 상관이 없으나 마지막에~ 태그 다 만들고 난 다음에! -->
+<script>
+  const box = document.querySelector('.box');
+  console.log(box);
+  // 태그 객체를 가져오면 자바스크립트로 태그들을 조작할 수있다 
+  box.style.backgroundColor = 'pink';
+  box.innerHTML = ' 박스입니다';
+
+  const boxList = document.querySelectorAll('.box'); // nodeList 객체로 여러개 box 태그들을 한번에 가져올 수 있다
+</script>

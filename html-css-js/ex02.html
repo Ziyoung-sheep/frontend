@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex02</title>
+  <style>
+    button {
+      border: none;
+      font-size: 1.2em;
+      padding: 20px;
+      background-color: royalblue;
+      margin: 5px;
+      cursor: pointer;
+      color: #eee;
+      border-radius: 10px;
+    }
+
+    button:hover {
+      background-color: cornflowerblue;
+      color: #000;
+    }
+
+    .container {
+      border: 1px solid black;
+      height: 800px;
+      width: 500px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      background-color: pink;
+      border: 1px solid red;
+      margin: 5px;
+      display: flex;
+    }
+
+    #first {
+      background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn-add"> 박스 추가</button>
+  <button class="btn-remove">박스 삭제</button>
+  <div class="container">
+    <div id="first" class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const btnList = document.querySelectorAll('button');
+  const btnAdd = btnList[0];
+  const btnRemove = btnList[1];
+  const container = document.querySelector('.container');
+  let boxCnt = 3;
+
+  function addPinkBox() {
+    // 자바스크립트에서 태그를 생성하는 방법 
+    // 1. 태그 객체 생성 
+    boxCnt += 1;
+    const newBox = document.createElement('div'); // <div></div>
+    newBox.classList.add('box');//  // <div class="box"></div>
+    if (boxCnt == 1) {
+      newBox.id = 'first';
+    }
+
+    // 컨테이너 태그 객체 안에 우리가 생성한 div 객체를 자식태그로 넣어줌
+    container.appendChild(newBox);
+  }
+
+  btnAdd.addEventListener("click", addPinkBox);
+
+  btnRemove.addEventListener("click", () => {
+    if (boxCnt == 0) {
+      alert("더이상 삭제할 수 있는 박스가 없습니다.")
+    } else {
+      boxCnt -= 1;
+      alert("박스 한개 삭제 ")
+      // container.removeChild(document.querySelector('.box'));
+      const lastBox = container.lastElementChild;
+      if (lastBox) {
+        container.removeChild(lastBox);
+      }
+    }
+  })
+
+
+</script>
