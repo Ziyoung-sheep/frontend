@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    font-family: Georgia, 'Times New Roman', Times, serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif, Courier, monospace;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  header>h3 {}
+
+  header>p {}
+
+  section {}
+
+  .quiz {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin: 10px;
+  }
+
+  .quiz span {}
+
+  .quiz>input {
+    margin-left: 10px;
+    height: 30px;
+    width: 40px;
+  }
+
+  .under {
+    display: flex;
+    align-items: center;
+  }
+
+  button {
+    margin: 20px;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: cornflowerblue;
+    color: white;
+  }
+
+  button:hover {
+    background-color: palevioletred;
+  }
+
+  .score {
+    font-size: 30px;
+    display: flex;
+  }
+
+  .wrong {
+    color: red;
+    text-decoration: line-through;
+  }
+</style>
+
+<body>
+  <div class="container">
+
+    <header>
+      <h3>산술문제를 풀어봅시다</h3>
+      <p>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</p>
+    </header>
+    <section>
+      <div class="quiz">
+        <span>1+1=</span><input type="number" id="answer">
+      </div>
+      <div class="quiz">
+        <span>1+1=</span><input type="number" id="answer">
+      </div>
+      <div class="quiz">
+        <span>1+1=</span><input type="number" id="answer">
+      </div>
+      <div class="quiz">
+        <span>1+1=</span><input type="number" id="answer">
+      </div>
+    </section>
+    <div class="under">
+      <button class="cnt">채점</button>
+      <dvi class="score">
+        <div class="cost">0</div><span>점</span>
+      </dvi>
+      <button class="replay">다시</button>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
+<script>
+  const buttonList = document.querySelectorAll('button');
+  const section = document.querySelector('section');
+  let quizList = document.querySelectorAll('.quiz>span');
+  let answerList = new Array(quizList.length);
+  const cost = document.querySelector('.cost');
+
+  // quizList.forEach(makeQuiz);
+  function makeQuiz() {
+    let idx = 0;
+    quizList.forEach(e => {
+      let num1 = parseInt(Math.random() * 10 + 1);
+      let num2 = parseInt(Math.random() * 10 + 1);
+      let operation = parseInt(Math.random() * (3 - 0 + 1));
+      let answer = 0;
+      let quiz;
+      switch (operation) {
+        case 0: quiz = num1 + '+' + num2 + "="; answer = num1 + num2; break;
+        case 1: quiz = num1 + '-' + num2 + "="; answer = num1 - num2; break;
+        case 2: quiz = num1 + '*' + num2 + "="; answer = num1 * num2; break;
+        case 3: quiz = num1 + '/' + num2 + "="; answer = parseInt(num1 / num2); break;
+      }
+      quizList[idx].innerHTML = quiz + answer;
+      answerList[idx++] = answer;
+    });
+  }
+
+  const inputList = document.querySelectorAll('input');
+  const cnt = buttonList[0];
+  cnt.addEventListener('click', () => {
+    alert('채점');
+    let right = 0;
+    let idx = 0;
+    quizList.forEach(e => {
+      if (inputList[idx].value != null && inputList[idx].value == answerList[idx]) {
+        right++;
+      } else {
+        e.classList.add('wrong');
+      }
+      idx++;
+    })
+    cost.innerHTML = right;
+
+  })
+
+  const replay = buttonList[1];
+  replay.addEventListener('click', () => {
+    alert('다시');
+    quizList.forEach(e => {
+      e.classList.remove('wrong');
+    })
+    inputList.forEach(input => {
+      input.value = null;
+    })
+
+    cost.innerHTML = '0';
+    makeQuiz();
+
+  })
+
+  makeQuiz();
+
+</script>

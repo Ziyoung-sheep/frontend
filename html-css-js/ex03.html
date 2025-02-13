@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex03</title>
+  <style>
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: yellow;
+      margin-bottom: 10px;
+    }
+
+    .msg {
+      border: 1px solid blue;
+      width: 300px;
+      height: 100px;
+      font-size: 1.3em;
+      line-height: 100px;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .rotate {
+      transform: rotate(360deg);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box"></div>
+  <div class="msg"> 네모 이벤트 처리값 </div>
+  <button id="btn-grow"> 네모 키우기</button>
+  <button id="btn-rotate">네모 회전하기</button>
+
+</body>
+
+</html>
+
+<script>
+
+  //밑의 소스 찾는거
+  //브라우저에 콘솔에다가 태그 객체 만들었는지 확인할 수 있음
+  const box = document.querySelector('.box');
+  //단독일때는 document.querySelector
+  const msg = document.querySelector('.msg');
+  const btnList = document.querySelectorAll('button');
+  //여러개일 때는 document.querySelectorAll
+  const btnGrow = btnList[0];
+  const btnRotate = btnList[1];
+  let canRotate = true;
+
+  btnGrow.addEventListener("click", () => {
+    if (canRotate) {
+      makeBig();
+      btnGrow.innerHTML = '네모 줄이기';
+    } else {
+      makeSmall();
+      btnGrow.innerHTML = '네모 키우기';
+    }
+  });
+
+
+  function makeBig() {
+    msg.innerHTML = '커진당';
+    box.style.transform = 'scale(1.5)';
+    box.style.transition = '1s';
+    canRotate = false;
+  }
+
+  function makeSmall() {
+    msg.innerHTML = '작아진당';
+    box.style.transform = 'scale(1)';
+    box.style.transition = '1s';
+    canRotate = true;
+  }
+
+  // btnRotate.addEventListener("click", makeRotation);
+  // function makeRotation() {
+  //   msg.innerHTML = '회전한당';
+  //   box.style.transform = 'rotate(180deg)';
+  //   box.style.transition = '1s';
+  //   //선생님 방식을 확인하기
+  //   //여기서 회전시키지 않고 CSS에다가 roatation 함수를 더해서 그 함수를 호출해 더하는 식으로...
+  // }
+
+
+  btnRotate.addEventListener("click", () => {
+    box.classList.toggle("rotate");
+    msg.innerHTML = '네모 회전했다';
+  })
+
+</script>

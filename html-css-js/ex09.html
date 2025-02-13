@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex09</title>
+</head>
+
+<body>
+  <h4></h4>
+  <h4></h4>
+  <h4></h4>
+
+</body>
+
+</html>
+
+<script>
+  const [test1, test2, test3] = [...document.querySelectorAll('h4')];
+
+  // const test1 = document.querySelectorAll('h4')[0];
+  // const test2 = document.querySelectorAll('h4')[1];
+  // const test3 = document.querySelectorAll('h4')[2];
+
+  test1.innerHTML = '<p style="color:red"> innerHTML</p>';
+  test2.innerText = '<p style="color:red"> >innerText</p>';
+  test3.textContent = '<p style="color:red">textContent</p>';
+</script>

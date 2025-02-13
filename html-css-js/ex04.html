@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex04</title>
+  <style>
+    .selected {
+      background-color: yellowgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+    <p>test</p>
+    <div> box </div>
+  </ul>
+
+</body>
+
+</html>
+
+<script>
+
+  // 좋지 않는 예시 : 일일히 li 태그에다가 이벤트리스너를 추가한것 
+  // const list = document.querySelectorAll('li');
+
+  // list.forEach((li) => {
+  //   li.addEventListener('click', () => {
+  //     li.classList.add('selected');
+  //   })
+  // })
+
+  // 좋은 예시 => 이벤트 위임 : 자식이벤트를 부모에게 위임 
+  const ul = document.querySelector('ul');
+
+  ul.addEventListener('click', (e) => {
+    // console.log(e);
+    //console.log(e.currentTarget); // 이벤트를 발동한 객체 => ul
+    //console.log(e.target); // 클릭한 자식대상 객체 - > li 
+    console.log(e.target.tagName);
+    if (e.target.tagName === 'LI') e.target.classList.add('selected');
+  })
+
+</script>

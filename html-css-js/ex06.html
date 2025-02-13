@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .one {
+      width: 400px;
+      height: 300px;
+      background-color: yellowgreen;
+    }
+
+    .two {
+      width: 80%;
+      height: 80%;
+      background-color: yellow;
+    }
+
+    .three {
+      width: 70%;
+      height: 70%;
+      background-color: royalblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="one">
+    <div class="two">
+      <div class="three"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const div = document.querySelectorAll("div");
+  div.forEach(d => d.addEventListener("click", (e) => {
+    e.stopPropagation; //자식객체를 클릭했을 때 부모객체가 함께 클릭되는 것 방지
+    //이벤트 전파 방지
+    console.log(e.currentTarget);
+  }));
+</script>

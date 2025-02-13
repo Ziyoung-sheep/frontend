@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>산술문제</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .question {
+      font-size: 1.5em;
+      margin: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .question span:nth-child(odd) {
+      padding-right: 10px;
+    }
+
+    .wrong {
+      color: red;
+      text-decoration: line-through;
+    }
+
+    .question input {
+      width: 80px;
+      height: 50px;
+      font-size: 1.1em;
+    }
+
+    .answer {
+      margin-top: 10px;
+    }
+
+    button {
+      border: none;
+      padding: 10px 20px;
+      background-color: royalblue;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: gold;
+      color: #222;
+    }
+
+    .answer span {
+      font-size: 28px;
+      padding: 0 30px;
+    }
+
+    .equal {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h3> 산술 문제를 풀어봅시다 </h3>
+  <h4> 수식을 계산하여 답을 입력하고 채점 버튼을 누르세요</h4>
+  <div class="list">
+    <!-- <div class="question">
+      <span>3 + 3 = </span> <input type="number" />
+    </div>
+    <div class="question">
+      <span>3 + 3 = </span> <input type="number" />
+    </div>
+    <div class="question">
+      <span>3 + 3 = </span> <input type="number" />
+    </div>
+    <div class="question">
+      <span>3 + 3 = </span> <input type="number" />
+    </div> -->
+
+  </div>
+  <div class="answer">
+    <button> 체점</button>
+    <span id="score"> 0 점</span>
+    <button> 다시</button>
+  </div>
+</body>
+
+</html>
+
+<script>
+  const answerArr = [0, 0, 0, 0];
+  //const answerArr = [6, 6, 6, 6];
+  const btns = document.querySelectorAll('button');
+
+  btns[0].addEventListener("click", () => {
+    const quizArr = document.querySelectorAll('.question span:nth-child(odd)');
+    const inputArr = document.querySelectorAll('input');
+    let score = 0;
+    let idx = 0;
+    inputArr.forEach(input => {
+      if (input.value == answerArr[idx]) {
+        score += 1;
+        quizArr[idx].classList.remove('wrong');
+      } else {
+        quizArr[idx].classList.add('wrong');
+      }
+      idx += 1;
+    })
+
+    document.querySelector('.answer span').innerHTML = `${score}점`;
+  })
+  function makeQuiz() {
+    // 문제 4개를 만들어주는 공간 
+    for (let idx in answerArr) {  // array key 값은 인덱스 
+      let num1 = parseInt(Math.random() * 10) + 1;
+      let num2 = parseInt(Math.random() * 10) + 1;
+      let op = parseInt(Math.random() * 4) + 1;
+      let operator = '';
+      switch (op) {
+        case 1: operator = "+"; answerArr[idx] = num1 + num2; break;
+        case 2: operator = "-"; answerArr[idx] = num1 - num2; break;
+        case 3: operator = "*"; answerArr[idx] = num1 * num2; break;
+        case 4: operator = "/"; answerArr[idx] = parseInt(num1 / num2); break;
+      }
+      console.log(` ${num1} ${operator} ${num2} = ${answerArr[idx]}`);
+
+      let div = document.createElement('div');
+      div.classList.add('question');
+      let span = document.createElement('span');
+      let equal = document.createElement('span');
+      equal.classList.add('equal');
+      equal.innerHTML = '=';
+      // num1 = (num1 + '').padStart(2, '0');
+      // num2 = (num2 + '').padStart(2, '0');
+      span.innerHTML = `${num1} ${operator} ${num2} `;
+      let input = document.createElement('input');  // <input />
+      input.type = 'number'; // <input type='number' />
+
+      div.appendChild(span);  // <div> <span> </span> </div>
+      div.appendChild(equal); // <div> <span> </span> <span>=</span></div>
+      div.appendChild(input); //  // <div> <span> </span> <input /> </div>
+
+      document.querySelector('.list').appendChild(div);
+    }
+
+
+  }
+
+  btns[1].addEventListener("click", () => {
+    document.querySelector('.list').innerHTML = "";
+    makeQuiz();
+  })
+  makeQuiz();
+</script>

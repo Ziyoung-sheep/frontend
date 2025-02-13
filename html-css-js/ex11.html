@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      width: 100vh;
+    }
+
+    .container {}
+
+    h2 {}
+
+    input {
+      margin-bottom: 20px;
+    }
+
+    .result {}
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>유저리스트</h2>
+    <input type="text" placeholder="id검색">
+    <div class="result">유저 검색 결과 없음</div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  const input = document.querySelector('input');
+  const userList = [
+    { id: 1, name: "홍길동", address: "서울" },
+    { id: 2, name: "둘리", address: "대전" },
+    { id: 3, name: "또치", address: "부산" },
+  ];
+
+  const div = document.querySelector('.users');
+  const result = document.querySelector('.result')
+
+  userList.forEach((user) => {
+    div.innerHTML += `<div class="user">
+        <h2>${user.name}</h2>
+        <p>${user.address}</p>
+      </div>`
+  })
+
+  input.addEventListener("keyup", inputSomething)
+  function inputSomething() {
+
+    userList.find(user => {
+      if (user.id == input.value) {
+
+      }
+    })
+
+  }
+
+
+
+
+</script>
