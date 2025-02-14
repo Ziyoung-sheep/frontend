@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body {}
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <h2>
+      <span>남은 시간 0초</span>
+    </h2>
+  </div>
+</body>
+
+</html>
+
+<script>
+  const cnt = document.querySelector('span');
+  let time = 5.00;
+
+  const interval = setInterval(() => {
+    cnt.innerHTML = `남은 시간 ${(time).toFixed(2)}초`;
+    time -= 0.01;
+    if (time <= 0) {
+      clearInterval(interval)
+      cnt.innerHTML = '5초가 지났습니다';
+    }
+  }, 10);
+
+</script>
+
+<!-- 현재 시각 가져와서 빼는 선생님 풀이~ -->
+<!-- <script>
+
+  const totalTime = 5 * 1000;
+  const startTime = new Date().getTime();
+
+  let changeTime = () => {
+    const now = new Date().getTime();
+    const diff = now - startTime;
+    //console.log(diff);
+    const remain = totalTime - diff;
+    //초단위 변경 
+    const remainSec = (remain / 1000).toFixed(2);
+    const label = `남은 시간 ${remainSec}초`;
+    if (remainSec <= 0) {
+      clearInterval(interval);
+      label = '5초가 지났습니다';
+    }
+
+    document.querySelector('.second').innerHTML = label;
+
+  }
+
+  const interval = setInterval(changeTime, 10); // 0.01초
+
+</script> -->

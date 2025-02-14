@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+  // setTimeout(콜백함수 , millsec) ; 1000 -> 1초 
+
+  let cnt = 0;
+  const interval = setInterval(() => {
+    console.log(`${++cnt} 초 ! `);
+  }, 1000);
+
+  setTimeout(() => {
+    console.log("5초 뒤에 실행!!")
+    clearInterval(interval);
+  }, 5000);
+</script>

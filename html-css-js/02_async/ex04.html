@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>0</h1>
+  <button class="btn1">1초 뒤에 다시 시작</button>
+  <button class="btn2">완전 종료</button>
+</body>
+
+</html>
+<script>
+  const btn1 = document.querySelector('.btn1');
+  const btn2 = document.querySelector('.btn2');
+  const cnt = document.querySelector('h1');
+
+  let second = 0;
+  let interval = setInterval(timer, 5);
+
+  function timer() {
+    cnt.innerHTML = `${second++}`;
+  }
+
+  btn2.addEventListener('click', () => {
+    clearInterval(interval)
+  });
+
+  // btn1.addEventListener('click', () => {
+  //   btn1.removeEventListener('click'); //클릭 이벤트를 없애기
+  //   //리무브 이벤트를 줬다가
+  //   // 5초 뒤에 다시 이벤트 더해주기
+  //   // 하지만 복잡한 방식이라 잘 안씀
+  // });
+  btn2.addEventListener('click', () => { });
+  let clickable = true;//flag변수
+
+  const restart = () => {
+    clearInterval(interval)
+
+    setTimeout(() => {
+      second = 0;
+      interval = setInterval(timer, 5)
+    }, 1000)
+
+  }
+
+</script>
+
+<!-- <script>
+  // 일반 자바스크립트 변수와 태극 객체 변수를 구별하기 위해서 태그객체는 앞에 $붙여준다 
+  let cnt = 0;
+  const $h1 = document.querySelector('h1');
+  const $btn1 = document.querySelector('.btn1');
+  const $btn2 = document.querySelector('.btn2');
+
+  const sayHi = () => {
+    $h1.innerHTML = `${++cnt} sayHi~!!!`
+  };
+
+  let interval = setInterval(sayHi, 50);
+
+  // $btn1.addEventListener('click', () => {
+  //   $btn1.removeEventListener('click', clickBtn);
+  //   setTimeout(() => {
+  //     $btn1.addEventListener('click', clickBtn);
+  //   }, 1005);
+
+  // })
+
+  let clickable = true;
+
+  const clickBtn = () => {
+
+    if (!clickable) return;
+
+    clearInterval(interval); // 인터벌 종료 
+    clickable = false;
+    setTimeout(() => {
+      console.log("재시작 버튼 누름~~");
+      cnt = 0;
+      interval = setInterval(sayHi, 50); // 인터벌 다시 실행
+      clickable = true;
+    }, 1000);
+  }
+  $btn1.addEventListener('click', clickBtn);
+
+  $btn2.addEventListener('click', () => {
+    clearInterval(interval); // 인터벌 종료 
+  });
+</script> -->

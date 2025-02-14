@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex08</title>
+  <script defer src="ex08.js"></script>
+</head>
+<style>
+  body {
+    /* width: 100vh; */
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .innput-group {
+    border: 1px solid rgb(0, 183, 255);
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  input {
+    outline: none;
+    width: 150px;
+    height: 30px;
+    border: none;
+  }
+
+  button {}
+
+  #btn-add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 1px solid rgb(0, 183, 255);
+    width: 100px;
+    height: 50px;
+  }
+
+  #btn-add:hover {
+    background-color: rgb(189, 247, 255);
+  }
+
+  .btn-group {}
+
+  #btn-start {}
+
+  #btn-stop {}
+</style>
+
+<body>
+  <div class="container">
+    <div class="innput-group">
+      <input type="text" id="username">
+      <button id="btn-add"> ADD</button>
+    </div>
+    <div class="btn-group">
+      <button id="btn-start">시작</button>
+      <button id="btn-stop">정지</button>
+    </div>
+
+    <div id="box">
+      <ul id="user-list">
+        <li class="item">박연미</li>
+        <li class="item on">둘리</li>
+
+      </ul>
+      <ul id="selected-list">
+        <li class="item fix"> 홍길동</li>
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>

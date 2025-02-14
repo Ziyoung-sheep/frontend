@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex05</title>
+  <style>
+    body {
+      /* width: 100vh; */
+      height: 100vh;
+      margin: 0px;
+    }
+
+    .container {
+      /* border: 1px solid blue; */
+      display: grid;
+      grid-template-columns: 8fr 2fr;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .grid {
+      /* border: 1px solid red; */
+      background-color: lightpink;
+      padding: 10px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 60px;
+      grid-gap: 15px;
+      overflow-y: scroll;
+    }
+
+    .box {
+      margin: 10px;
+      width: 150px;
+      height: 50px;
+      background-color: blueviolet;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav {
+      /* width: 20%; */
+      background-color: lightgray;
+      /* border: 1px solid red; */
+      /* flex: 1; */
+    }
+
+    button {
+      margin: 10px;
+      width: 150px;
+      height: 50px;
+      background-color: rgb(47, 130, 255);
+      color: white;
+      cursor: pointer;
+    }
+
+    nav button:hover {
+      background-color: palevioletred;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="box">서울</div>
+    </div>
+    <nav>
+      <button class="btn1">추가하기</button>
+      <button class="btn2">정지하기</button>
+    </nav>
+  </div>
+</body>
+
+</html>
+<!-- 이거 다시 뜯어봐야겠다... -->
+<script>
+  let data = ["충주", "부산", "대구", "경기", "광주", "광양", "제주", "용인"];
+  const btnAdd = document.querySelector('.btn1');
+  const btnStop = document.querySelector('.btn2');
+  const grid = document.querySelector('.grid');
+  let clickable = true;
+
+
+  btnAdd.addEventListener('click', () => {
+    let cnt = 1;
+    if (!clickable) return;
+    clickable = false;
+    for (let i = 0; i < data.length; i++) {
+      const interval = setTimeout(() => {
+        let box = document.createElement('div');
+        box.classList.add('box');
+        box.innerHTML = data[i];
+        grid.appendChild(box);
+      }, 1000 * cnt++);
+    }
+  });
+
+  btnStop.addEventListener('click', () => {
+    clearInterval(interval)
+  })
+
+</script>

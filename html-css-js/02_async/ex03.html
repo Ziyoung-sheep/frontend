@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex03</title>
+</head>
+
+<body>
+  <h1>0</h1>
+  <button>중지</button>
+</body>
+
+</html>
+
+<script>
+  const button = document.querySelector('button');
+  const cnt = document.querySelector('h1');
+  let second = 1;
+
+  const interval = setInterval(() => {
+    cnt.innerHTML = `${second++}`;
+  }, 1000);
+
+  button.addEventListener('click', () => {
+    clearInterval(interval)
+  });
+
+</script>

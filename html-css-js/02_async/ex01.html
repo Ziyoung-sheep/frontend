@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex01</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+
+  let x = 10;
+  let y = 20;
+
+  // function one() {
+  //   two();
+  //   console.log("one start");
+  //   function two() {
+  //     console.log("two start");
+
+  //   }
+  // }
+
+  // console.log("start");
+  // one();
+
+  // 나의 함수 호출 권한을 다른 애한테 넘겨줌 
+  function callback() {
+    console.log("async chanyeong")
+  }
+
+  setTimeout(callback, 5000);
+
+  console.log("hello changyeong")
+
+  // callback();
+
+
+</script>
