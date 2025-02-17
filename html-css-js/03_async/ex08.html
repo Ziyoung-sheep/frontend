@@ -10,7 +10,6 @@
 <style>
   body {
     /* width: 100vh; */
-    border: 1px solid black;
     margin: 0px;
     padding: 0px;
   }
@@ -19,7 +18,15 @@
     padding: 10px;
   }
 
+  header {
+    display: flex;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .innput-group {
+    border: 1px solid black;
     border: 1px solid rgb(0, 183, 255);
     width: 200px;
     height: 30px;
@@ -27,16 +34,21 @@
     display: flex;
     align-items: center;
     overflow: hidden;
+    right: 10px;
   }
 
   input {
+    padding: 5px;
     outline: none;
     width: 150px;
     height: 30px;
     border: none;
   }
 
-  button {}
+  button {
+    height: 30px;
+    width: 80px;
+  }
 
   #btn-add {
     display: flex;
@@ -57,18 +69,63 @@
   #btn-start {}
 
   #btn-stop {}
+
+  #box {
+    border: 1px solid black;
+    display: flex;
+    padding: 0px;
+  }
+
+  #user-list {
+    display: flex;
+    border: 1px solid lightgray;
+    flex: 1;
+    margin-right: 5px;
+    border-radius: 5px;
+
+  }
+
+  .item {
+    height: 40px;
+    width: 80px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 5px;
+  }
+
+  #selected-list {
+
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    /* margin: 5px; */
+    flex: 1;
+  }
+
+  .on {
+    background-color: cornflowerblue;
+  }
+
+  .fix {
+    color: white;
+    background-color: red;
+  }
 </style>
 
 <body>
   <div class="container">
-    <div class="innput-group">
-      <input type="text" id="username">
-      <button id="btn-add"> ADD</button>
-    </div>
-    <div class="btn-group">
-      <button id="btn-start">시작</button>
-      <button id="btn-stop">정지</button>
-    </div>
+    <header>
+      <div class="innput-group">
+        <input type="text" id="username">
+        <button id="btn-add"> ADD</button>
+      </div>
+      <div class="btn-group">
+        <button id="btn-start">시작</button>
+        <button id="btn-stop">정지</button>
+      </div>
+    </header>
 
     <div id="box">
       <ul id="user-list">

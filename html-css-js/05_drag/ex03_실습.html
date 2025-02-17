@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 10px;
+      padding: 0px;
+    }
+
+    .container,
+    input {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+    }
+
+    .box {
+      font-size: 20px;
+      margin-right: 10px;
+      border: 1px solid black;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box:hover {
+      background-color: lightgray;
+      cursor: pointer;
+    }
+
+    input {}
+
+    .trash {
+      border: 1px solid black;
+      width: 500px;
+      height: 200px;
+    }
+
+    .findNum {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <input type="text">
+  <div class="trash">
+  </div>
+</body>
+
+</html>
+<script>
+
+  const $container = document.querySelector('.container');
+  const $trash = document.querySelector('.trash');
+  const $boxs = [...document.querySelectorAll('.box')];
+  const box = document.querySelector('.box');
+  let num = 1;
+  const $input = document.querySelector('input');
+
+  //박스를 선택하면 num이 순서대로 들어가도록
+
+  $boxs.forEach(box => {
+    box.addEventListener('click', e => {
+      //클릭한 박스에 숫자가 있으면 return
+      if (e.target.innerHTML.trim() !== '') {
+        alert('이미 숫자가 있습니다');
+        return;
+      }
+      e.target.innerHTML = num;
+      num++;
+      //숫자가 들어가 있는 박스만 드래그 가능
+      //드래그 하는 중에는 박스가 초록색이 되기
+      box.setAttribute('draggable', 'true');
+      box.addEventListener('dragstart', e => {
+        e.dataTransfer.setData('num', e.target.innerText);  // num = '1'
+      })
+    });
+  });
+
+  //인풋값이 박스에 있으면 빨간색
+  if ($boxs.find(box => box.innerHTML === $input.value)) {
+    if ($input.value != null) {
+      box.style.backgroundColor = "red";
+    }
+  }
+
+  $input.addEventListener("keydown", (e) => {
+    // console.log(e);
+    // 키보드에서 한글를 입력받았을때 이벤트 중복처리 방지 
+    if (e.isComposing) return;
+    if (e.code === 'Enter') {
+      //엔터하면 인풋과 박스 안에 있는 숫자가 사라진다.
+
+    }
+  })
+
+  $boxs.addEventListener('drop', e => {
+    //숫자가 있는 박스를 trash 구역에 박스를 drop하면 해당 박스 사라지기
+    //숫자가 없는 박스는 드래그 되지 않는다.
+  });
+
+
+
+</script>

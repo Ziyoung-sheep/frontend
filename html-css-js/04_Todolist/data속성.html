@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>내 커스텀 태그</title>
+  <style>
+    li[data-idx="1"] {
+      color: red;
+    }
+
+    li[data-idx="2"] {
+      color: blue;
+    }
+
+    li[data-idx="3"] {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- data-내가원하는이름  -->
+  <ul>
+    <li data-idx="1" data-section="A">item1</li>
+    <li data-idx="2">item2</li>
+    <li data-idx="3">item3</li>
+  </ul>
+
+</body>
+
+</html>
+
+<script>
+  let idx = 3;
+  const li = document.querySelector(`li[data-idx='${idx}']`);
+  li.style.backgroundColor = 'pink';
+  li.setAttribute('data-myData', '박연미');
+
+  li.addEventListener('click', () => {
+    alert(li.getAttribute('data-myData'));
+  })
+</script>

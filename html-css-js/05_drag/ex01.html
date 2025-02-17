@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>드레그1 </title>
+  <style>
+    .list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .list div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    img {
+      width: 50%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="list">
+    <div class="box1">
+    </div>
+    <div class="box2">
+      <span> 팩맨</span>
+      <img src="./packman.png" alt="packman">
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  const $img = document.querySelector('img');
+  const $span = document.querySelector('span');
+  const $box1 = document.querySelector('.box1');
+  const $box2 = document.querySelector('.box2');
+  const $list = document.querySelector('.list');
+
+  $list.addEventListener('dragover', (e) => {
+    // 드레그 오버 이벤트 기본값이 막기 
+    e.preventDefault();
+  })
+  $list.addEventListener('drop', e => {
+    //console.log(e.target)
+    e.target.appendChild($span);
+    e.target.appendChild($img);
+  });
+
+</script>

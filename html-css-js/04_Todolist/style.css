@@ -1,0 +1,124 @@
+body{
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.container{
+  font-family: Arial, Helvetica, sans-serif;
+  /* border: 1px solid black; */
+  border-radius: 20px;
+  min-width : 350px;
+  height: 90%;
+  min-height : 300px;
+  margin: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 13px rgb(59, 99, 179);
+  display: flex;
+  flex-direction: column;
+}
+
+header,footer{
+  background-image: linear-gradient(to right, rgb(0, 253, 253), rgb(162, 0, 255));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+}
+
+header{
+  /* text-transform: uppercase; */
+  height: 50px;
+  font-size: 25px;
+  color: white;
+}
+
+.items{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  /* border: 1px solid green */
+  
+}
+.item_row{
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-bottom: 10px;
+  /* border: 1px solid green */
+}
+span{}
+.item_name{}
+button{
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 0px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.item_delete{
+}
+.item_delete:hover{
+  color: red;
+}
+
+
+.fa-solid{}
+
+.fa-trash-can{
+  width: 10px;
+  height: 10px;
+}
+footer{
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 80px;
+}
+input{
+  position: absolute;
+  top: 0px;
+  height: 20px;
+  width: 95%;
+  padding: 5px 10px;
+  outline: none;
+  border: none;
+}
+.footer_btn{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 10px;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%
+}
+.footer_btn:hover{
+background-color: gray;
+}
+.fas{
+  
+}
+.fa-plus{
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+/* @media(max-width: 767px){ */
+
+/* } */
