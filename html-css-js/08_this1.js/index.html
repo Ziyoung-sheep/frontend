@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1></h1>
+  <button id="btn1">click btn1</button>
+  <button id="btn2">click btn2</button>
+</body>
+
+</html>
+
+<script>
+
+  class Btn {
+    constructor() {
+      this.cnt = 0;
+      this.btn1 = document.querySelector('#btn1');
+      this.btn2 = document.querySelector('#btn2');
+      this.h1 = document.querySelector('h1');
+      this.init();
+    }
+
+    init() {
+
+      // 이벤트리스터의 this는 콜백함수의 this가 객체가 된다 
+      this.btn1.addEventListener("click", this.increase);
+      this.btn2.addEventListener("click", this.addCnt);
+    }
+
+    increase() {
+      console.log(this);  //여기서 this 가 버튼이 됨 
+      console.log(this.h1);
+      this.cnt += 1;
+      this.h1.innerHTML = `${this.cnt}번 눌렀습니다;`
+    }
+
+    // 만약에 메서드가 이벤트, 고차함수 => 콜백함수 사용된다면 무조건 화살표 함수로 메서드를 정의해서 사용해야함
+
+    addCnt = () => {
+      // 이벤트 함수는 실행컨텍스트가 없어서 바인딩이 안되기 때문에 자연스럽게 
+      // addCnt의 호출하고 있는 Btn 클래스의 객체의 주소값으로 들어온다 
+      console.log(this); // 버튼 클래스의 주소값이 된다 
+      this.cnt += 1;
+      this.h1.innerHTML = `${this.cnt}번 눌렀습니다;`
+    }
+  }
+
+  window.addEventListener("load", () => { window.btn = new Btn(); })
+
+
+
+
+</script>

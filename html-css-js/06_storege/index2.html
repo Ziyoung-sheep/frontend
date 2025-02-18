@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스토리지 실습2</title>
+</head>
+
+<body>
+
+  <a href="./index1.html"> 페이지 1로 이동</a>
+  <button> 고양이 삭제 </button>
+
+</body>
+
+</html>
+<script>
+  //let name;
+  document.write(`<h1>${name}</h1>`);
+  // key => return : value
+  let catData = localStorage.getItem('cat');
+  document.write(`<h1>${catData}</h1>`);
+  let dogData = sessionStorage.getItem('dog');
+  document.write(`<h1>${dogData}</h1>`);
+
+  console.log(catData);
+  console.log(dogData);
+
+  let cat = JSON.parse(catData);
+  let dog = JSON.parse(dogData);
+  console.log(cat);
+  console.log(dog);
+
+  document.querySelector('button').addEventListener('click', () => {
+    localStorage.removeItem('cat');
+    location.reload(); // 페이지 새로고침
+  })
+
+</script>

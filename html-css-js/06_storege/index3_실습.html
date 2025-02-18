@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    header {
+      display: flex;
+      flex-direction: column;
+    }
+
+    input {
+      width: 200px;
+      margin: 10px;
+    }
+
+    .box {
+      display: flex;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="inputbox">
+        <input type="text" id="save"><button class="savebnt">저장하기</button>
+        <!-- <input type="button" id="btn-save" value="추가하기"> -->
+        <!-- 이케 쓰는 법도 있긴 함 -->
+      </div>
+      <div class="inputbox">
+        <input type="text" id="delet"><button class="delbnt">삭제하기</button>
+      </div>
+    </header>
+    <hr>
+    <main>
+      <div class="box"></div>
+    </main>
+  </div>
+</body>
+
+</html>
+<script>
+  let save = document.querySelector('#save');
+  let del = document.querySelector('#delet');
+  let savebnt = document.querySelector('.savebnt');
+  let delbnt = document.querySelector('.delbnt');
+  let num = 1;
+  let parent = document.querySelector('.box');
+  let cnt = 0;
+  //아니 배열을 하나 키값으로 만들어서 그 배열을 자꾸 덮어쓰기를 해도? 되는거잖아???
+
+  savebnt.addEventListener('click', () => {
+    if (!save.value.trim()) {
+      alert('저장할 값이 없습니다.')
+      save.value = '';
+      return;
+    }
+    // console.log(save.value);
+    // localStorage.setItem(num, JSON.stringify(save.value));
+    let key = `no${num++}`;
+    localStorage.setItem(key, save.value);
+    cnt++;
+    // document.write(`<h4>${save.value}</h4>`)
+    let data = document.createElement("h4");
+    data.classList.add(key);
+    data.innerHTML = save.value + ', ';
+    parent.appendChild(data);
+    save.value = '';
+  })
+
+  delbnt.addEventListener('click', () => {
+    let delValue = del.value.trim();
+    if (cnt == 0) {
+      alert('삭제할 값이 없습니다.')
+      del.value = '';
+      return;
+    }
+    if (!delValue) return;
+    let delKey = Object.keys(localStorage).find(key => localStorage.getItem(key) === delValue);
+    // console.log(delValue);
+    // console.log(delKey);
+    localStorage.removeItem(delKey);
+    cnt--;
+    let delHtml = document.querySelector(`.${delKey}`);
+    if (delHtml) {
+      delHtml.remove();
+    } else {
+      alert('해당 값을 찾을 수 없습니다.');
+    }
+    del.value = '';
+  })
+</script>

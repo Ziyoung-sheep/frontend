@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스토리지 실습</title>
+</head>
+
+<body>
+
+  <input type="text" id="input-save">
+  <input type="button" id="btn-save" value="추가하기">
+
+  <br>
+  <input type="text" id="input-delete">
+  <button id="btn-delete">삭제하기</button>
+  <hr>
+  <div class="save"></div>
+</body>
+
+</html>
+
+<script>
+  const inputSave = document.querySelector("#input-save");
+  const inputDelete = document.querySelector("#input-delete");
+  const btnDelete = document.querySelector("#btn-delete");
+  const btnSave = document.querySelector("#btn-save");
+  const save = document.querySelector('.save');
+
+  const inputData = localStorage.getItem('input_data') ? JSON.parse(localStorage.getItem('input_data')) : [];
+
+  // 값 추가하기 
+  btnSave.addEventListener("click", (e) => {
+    if (!inputSave.value || !inputSave.value.trim()) {
+      return;
+    }
+    inputData.push(inputSave.value);
+    //console.log(inputData);
+    inputSave.value = '';
+    inputSave.focus();
+
+    localStorage.setItem('input_data', JSON.stringify(inputData));
+
+    changeSave();
+  })
+
+  function changeSave() {
+    save.innerHTML = inputData ? inputData : '';
+  }
+
+  // 값 삭제하기 
+  btnDelete.addEventListener("click", (e) => {
+    if (inputData.length == 0) {
+      save.innerHTML = '삭제할 값이 없습니다';
+      return;
+    }
+    let value = inputDelete.value;
+    if (!value || !value.trim()) {
+      inputDelete.value = '';
+      inputDelete.focus();
+      return;
+    }
+    let delIdx = inputData.findIndex(data => data === value);
+    //let delIdx = inputData.findLastIndex( data => data === value);
+    if (delIdx == -1) {
+      inputDelete.value = '';
+      inputDelete.focus();
+      return;
+    }
+    inputData.splice(delIdx, 1);
+    // 로컬 저장소에 수정한 값 반경 
+    localStorage.setItem('input_data', JSON.stringify(inputData));
+    inputDelete.value = '';
+    inputDelete.focus();
+    changeSave();
+
+  })
+
+
+  // changeSave();
+
+  window.addEventListener("load", changeSave);
+
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스토리지 실습1</title>
+</head>
+
+<body>
+
+  <a href="./index2.html"> 페이지 2로 이동</a>
+</body>
+
+</html>
+
+<script>
+  let name = '박연미';
+  let cat = { name: "복다주", age: 14 };
+  let dog = [10, 20, 30, 40, 50];
+  // 브라우저를 종료 , pc 종료해도 내 로컬 브라우저 내장메모리에 저장 
+  //(key , value)
+  // localStorage.setItem("cat", '고양이');
+  // sessionStorage.setItem("dog", '강아지');
+  console.log(String(cat)); // "[object object]""
+  console.log(String(dog)); // "10,20,30,40,50"
+
+  // 브라우저 탭을 종료 전까지는 값을 저장 , 브라우저 탭 종료하면 메모리 사라짐 
+  // localStorage.setItem("cat", cat);
+  // sessionStorage.setItem("dog", dog);
+  localStorage.setItem("cat", JSON.stringify(cat));
+  sessionStorage.setItem("dog", JSON.stringify(dog));
+</script>
