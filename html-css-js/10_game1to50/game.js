@@ -1,6 +1,7 @@
 class Game1To50 {
   constructor() {
     this.nodeList = [];
+    //이건 무엇을 위한 리스트인지 모르겠네
     this.frontList = [];
     this.backList = [];
     this.cnt = 1;
