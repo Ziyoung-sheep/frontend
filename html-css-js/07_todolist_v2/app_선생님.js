@@ -45,8 +45,6 @@ class App {
     this.inputTitle.value = '';
     this.inputContent.value = '';
     this.saveStorage();
-
-
   }
 
   // 이미 스토리지에 값이 있으면 불러오기 

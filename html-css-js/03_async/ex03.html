@@ -8,23 +8,18 @@
 </head>
 
 <body>
-  <h1>0</h1>
+  <h1></h1>
   <button>중지</button>
 </body>
 
 </html>
 
 <script>
-  const button = document.querySelector('button');
-  const cnt = document.querySelector('h1');
-  let second = 1;
-
-  const interval = setInterval(() => {
-    cnt.innerHTML = `${second++}`;
+  let cnt = 0;
+  const time = setInterval(() => {
+    document.querySelector('h1').innerHTML = ++cnt;
   }, 1000);
 
-  button.addEventListener('click', () => {
-    clearInterval(interval)
-  });
+  document.querySelector('button').addEventListener('click', () => clearInterval(time));
 
 </script>

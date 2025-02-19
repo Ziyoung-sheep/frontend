@@ -1,0 +1,108 @@
+body{
+  /* border: 1px solid red; */
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+header{ 
+  /* border: 1px solid blue; */
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header>h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Times, serif;
+}
+.container{
+  flex: 1;
+  width: 100%;
+  /* border: 1px solid blue; */
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+  flex-direction: column;
+  /* position: relative; */
+}
+button{
+  display: block;
+  width: 180px;
+  height: 80px;
+  border-radius: 10px;
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Times, serif;
+  box-shadow: 5px 5px 5px rgb(136, 136, 136);
+  cursor: pointer;
+}
+#start{
+  color: white;
+  /* position: absolute; */
+  /* bottom: 30px; */
+  /* bottom: 50%; */
+  background-color: palevioletred;
+  margin: 20px;
+}
+
+.game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.line{
+  display: flex;
+}
+.box{
+  cursor: pointer;
+  height: 100px;
+  width: 100px;
+  border: 1px solid black;
+  background-color: rgb(255, 195, 121);
+  margin: 5px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-family:'Courier New', Courier, monospace Arial, Helvetica, sans-serif, Cochin, Georgia, Times, 'Times New Roman', serif, 'Times New Roman', Times, serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Geneva, Tahoma, sans-serif, 'Arial Narrow', Arial, sans-serif, 'Arial Narrow', Arial, sans-serif, 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, 'Arial Narrow', Arial, sans-serif, Courier, monospace;
+  box-shadow: 1px 1px 5px rgb(151, 151, 151);
+}
+.pink{
+  background-color: pink;
+  color: darkred;
+}
+.blue{
+  background-color: cornflowerblue;
+  color: darkblue
+}
+
+.gameOver{
+  display: block;
+  width: 400px;
+  height: 200px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  font-size: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Times, serif;
+  font-weight: bold;
+}
+
+.noWinner{
+  background-color: white;
+  color: black;
+}
+.game{
+  display: flex;
+}
