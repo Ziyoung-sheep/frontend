@@ -35,7 +35,7 @@ header>h1{
 .game{
   display: flex;
   flex-direction: column;
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
 }
 
 .line{
@@ -43,7 +43,7 @@ header>h1{
   /* border: 1px solid blue; */
 }
 .box{
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 80px;
   height: 80px;
   background-color: darkmagenta;
@@ -54,4 +54,39 @@ header>h1{
   margin: 5px;
   font-size: 30px;
   font-weight: bold;
+  cursor: pointer;
+}
+.gameOver{
+  width: 500px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+  background-color: rgb(255, 152, 203);
+  box-shadow: 3px 3px 10px rgb(124, 124, 124);
+  margin: 30px;
+}
+
+.restart{
+  width: 150px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(199, 2, 173);
+  border: none;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 5px 5px 10px rgb(124, 124, 124);
+}
+
+.finishBox{
+  background-color: transparent;
+}
+
+.hint{
+  background-color: hotpink;
 }
