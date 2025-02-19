@@ -51,8 +51,9 @@ class Game1To50 {
       // console.log('idxBack=' + idxBack);
 
       // if (this.frontList[idxFront] != 0 || this.backList[idxBack] != 0) {
+      //   console.log('중복이야');
       //   i--;
-      //   continue;
+      //   //continue;
       // }
       this.frontList[idxFront] = this.cnt;
       this.backList[idxBack] = this.cnt + 25;
